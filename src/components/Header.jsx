@@ -12,7 +12,7 @@ const Header = () => {
       <header className="bg-white sticky-top">
         <nav className="navbar navbar-expand-lg container">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/ecommWebapp">
+            <Link className="navbar-brand" to="/ecommWebapp/">
               <img src={logo} alt="brand-logo" width={150} />
             </Link>
             <button
@@ -35,7 +35,7 @@ const Header = () => {
                   <NavLink
                     className="nav-link active-nav"
                     aria-current="page"
-                    to="/ecommWebapp"
+                    to="/ecommWebapp/"
                   >
                     HOME
                   </NavLink>

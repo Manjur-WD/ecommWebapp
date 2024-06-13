@@ -16,7 +16,7 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/ecommWebapp" element={<HomePage />} />
+          <Route path="/ecommWebapp/" element={<HomePage />} />
           <Route
             path="/category/:categoryName"
             element={<CategoryWiseProduct />}
