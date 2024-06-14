@@ -9,9 +9,12 @@ import "../node_modules/react-loading-skeleton/dist/skeleton.css";
 import "../node_modules/react-multi-carousel/lib/styles.css";
 import "animate.css/animate.min.css";
 import { CartProvider } from "./contexts/CartContext.jsx";
+import { WishListProvider } from "./contexts/WishListContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <CartProvider>
-    <App />
-  </CartProvider>
+  <WishListProvider>
+    <CartProvider>
+      <App />
+    </CartProvider>
+  </WishListProvider>
 );

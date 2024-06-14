@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
+import { WishListContext } from "../contexts/WishListContext";
 
 const Pcard = (props) => {
   let starArray = [];
@@ -20,6 +21,7 @@ const Pcard = (props) => {
   }
 
   const { addItemToCart } = useContext(CartContext);
+  const { addtoWishList, removefromWishList } = useContext(WishListContext);
 
   const handleClick = () => {
     addItemToCart(props);
@@ -48,7 +50,12 @@ const Pcard = (props) => {
         <p className="text-center">{props.count} left</p>
         <div className="action-btn-container">
           <div className="action-on-product d-flex justify-content-around px-md-5 mx-md-4 px-2">
-            <div className="wishlist-btn">
+            <div
+              className="wishlist-btn"
+              onClick={() => {
+                addtoWishList(props);
+              }}
+            >
               <i
                 className="ri-heart-fill"
                 data-toggle="tooltip"

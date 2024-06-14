@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import logo from "../assets/images/QuickMART logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
+import { WishListContext } from "../contexts/WishListContext";
 
 const Header = () => {
-
-  const {cartItems} = useContext(CartContext);
-  console.log(cartItems);
+  const { cartItems } = useContext(CartContext);
+  const { wishlistItems } = useContext(WishListContext);
+  // console.log(wishlistItems);
   return (
     <>
       <header className="bg-white sticky-top">
@@ -80,8 +81,12 @@ const Header = () => {
               <div className="right-head text-center d-flex gap-3">
                 <i className="ri-user-3-line mx-3 fs-5"></i>
                 <div className="wishlist-icon">
-                  <i className="ri-heart-2-line fs-5"></i>
-                  <span className="wishlist-count">0</span>
+                  <Link to="/wishlist" className="text-decoration-none text-dark">
+                    <i className="ri-heart-2-line fs-5"></i>
+                    <span className="wishlist-count">
+                      {wishlistItems.length}
+                    </span>
+                  </Link>
                 </div>
                 <div className="cart-icon">
                   <Link to="/cart" className="text-decoration-none text-dark">
