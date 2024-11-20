@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base:"/ecommWebapp/",
+
   plugins: [react(),
     VitePWA({
       registerType: 'autoUpdate',  // Automatically update the service worker
@@ -33,4 +33,6 @@ export default defineConfig({
       },
     }),
   ],
+
+  base:"/ecommWebapp/",
 })
