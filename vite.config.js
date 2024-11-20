@@ -1,38 +1,37 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { VitePWA } from 'vite-plugin-pwa';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { VitePWA } from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-
-  plugins: [react(),
+  base: "/ecommWebapp/",
+  plugins: [
+    react(),
     VitePWA({
-      registerType: 'autoUpdate',  // Automatically update the service worker
+      registerType: "autoUpdate",
       devOptions: {
-        enabled: true,  // Enable during development for easier testing
+        enabled: true, // Enable PWA during development for testing
       },
       manifest: {
-        name: 'EcommWebApp Lite',
-        short_name: 'Ecommerce',
-        description: 'Ecommerce Platform',
-        theme_color: '#ffffff',
-        background_color: '#ffffff',
-        display: 'standalone', // App behaves like a native app
+        name: "My PWA App",
+        short_name: "PWAApp",
+        description: "A Vite-powered Progressive Web App",
+        theme_color: "#ffffff",
+        background_color: "#ffffff",
+        display: "standalone",
         icons: [
           {
-            src: '/icons/icon-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
+            src: "/icons/icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
           },
           {
-            src: '/icons/icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
+            src: "/icons/icon-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
           },
         ],
       },
     }),
   ],
-
-  base:"/ecommWebapp/",
-})
+});
